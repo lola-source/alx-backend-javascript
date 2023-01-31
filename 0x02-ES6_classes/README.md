@@ -5,143 +5,7 @@
 
 ![Logo](https://www.howtogeek.com/wp-content/uploads/2021/05/laptop-with-terminal-big.png?height=200p&trim=2,2,2,50)
 
-Learning Objectives
--------------------
 
-At the end of this project, you are expected to be able to [explain to anyone](https://intranet.hbtn.io/rltoken/4VooQNTVO56N29V5Thn8bw "explain to anyone"), **without the help of Google**:
-
-*   How to define a Class
-*   How to add methods to a class
-*   Why and how to add a static method to a class
-*   How to extend a class from another
-*   Metaprogramming and symbols
-
-Resources
----------
-
-**Read or watch**:
-
-*   [Classes](https://intranet.hbtn.io/rltoken/uG2JX6kLxDa-51RPA2WGFA "Classes")
-*   [Metaprogramming](https://intranet.hbtn.io/rltoken/abF17Z3CueKFyVDHoRyqig "Metaprogramming")
-
-Setup
------
-
-### Install NodeJS 12.11.x
-
-(in your home directory):
-
-    curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-    sudo bash nodesource_setup.sh
-    sudo apt install nodejs -y
-    
-
-    $ nodejs -v
-    v12.11.1
-    $ npm -v
-    6.11.3
-    
-
-### Install Jest, Babel, and ESLint
-
-in your project directory:
-
-*   Install Jest using: `npm install --save-dev jest`
-*   Install Babel using: `npm install --save-dev babel-jest @babel/core @babel/preset-env`
-*   Install ESLint using: `npm install --save-dev eslint`
-
-Configuration files
--------------------
-
-### `package.json`
-
-```
-{
-  "scripts": {
-    "lint": "./node_modules/.bin/eslint",
-    "check-lint": "lint [0-9]*.js",
-    "dev": "npx babel-node",
-    "test": "jest",
-    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/node": "^7.8.0",
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.17.0",
-    "jest": "^24.9.0"
-  }
-}
-```
-
-### `babel.config.js`
-
-```
-module.exports = {
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        targets: {
-          node: 'current',
-        },
-      },
-    ],
-  ],
-};
-```
-
-### `.eslintrc.js`
-
-```
-module.exports = {
-  env: {
-    browser: false,
-    es6: true,
-    jest: true,
-  },
-  extends: [
-    'airbnb-base',
-    'plugin:jest/all',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
-  plugins: ['jest'],
-  rules: {
-    'max-classes-per-file': 'off',
-    'no-underscore-dangle': 'off',
-    'no-console': 'off',
-    'no-shadow': 'off',
-    'no-restricted-syntax': [
-      'error',
-      'LabeledStatement',
-      'WithStatement',
-    ],
-  },
-  overrides:[
-    {
-      files: ['*.js'],
-      excludedFiles: 'babel.config.js',
-    }
-  ]
-};
-```
-
-### and…
-
-Don’t forget to run `$ npm install` when you have the `package.json`
-
-Tasks
------
 
 ### 0\. You used to attend a place like this at some point
 
@@ -193,7 +57,7 @@ Implement a function named `initializeRooms`. It should return an array of 3 `Cl
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [1-make_classrooms.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/1-make_classrooms.js)
+*   File: [1-make_classrooms.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/1-make_classrooms.js)
 
 ### 2\. A Course, Getters, and Setters
 
@@ -248,7 +112,7 @@ Implement a class named `HolbertonCourse`:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [2-hbtn_course.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/2-hbtn_course.js)
+*   File: [2-hbtn_course.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/2-hbtn_course.js)
 
 ### 3\. Methods, static methods, computed methods names..... MONEY
 
@@ -277,7 +141,7 @@ Implement a class named `Currency`:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [3-currency.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/3-currency.js)
+*   File: [3-currency.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/3-currency.js)
 
 ### 4\. Pricing
 
@@ -315,7 +179,7 @@ Implement a class named `Pricing`:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [4-pricing.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/4-pricing.js)
+*   File: [4-pricing.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/4-pricing.js)
 
 ### 5\. A Building
 
@@ -355,7 +219,7 @@ Implement a class named `Building`:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [5-building.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/5-building.js)
+*   File: [5-building.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/5-building.js)
 
 ### 6\. Inheritance
 
@@ -390,7 +254,7 @@ Implement a class named `SkyHighBuilding` that extends from `Building`:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [6-sky_high.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/6-sky_high.js)
+*   File: [6-sky_high.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/6-sky_high.js)
 
 ### 7\. Airport
 
@@ -420,7 +284,7 @@ Implement a class named `Airport`:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [7-airport.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/7-airport.js)
+*   File: [7-airport.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/7-airport.js)
 
 ### 8\. Primitive - Holberton Class
 
@@ -451,7 +315,7 @@ Implement a class named `HolbertonClass`:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [8-hbtn_class.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/8-hbtn_class.js)
+*   File: [8-hbtn_class.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/8-hbtn_class.js)
 
 ### 9\. Hoisting
 
@@ -563,7 +427,7 @@ Result:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [9-hoisting.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/9-hoisting.js)
+*   File: [9-hoisting.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/9-hoisting.js)
 
 ### 10\. Vroom
 
@@ -608,7 +472,7 @@ Hint: Symbols in ES6
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [10-car.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/10-car.js)
+*   File: [10-car.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/10-car.js)
 
 ### 11\. EVCar
 
@@ -649,7 +513,7 @@ Implement a class named `EVCar` that extends the `Car` class:
 
 *   GitHub repository: `holbertonschool-backend-javascript`
 *   Directory: `0x02-ES6_classes`
-*   File: [100-evcar.js](https://github.com/Imanolasolo/holbertonschool-backend-javascript/blob/master/0x02-ES6_classes/100-evcar.js)
+*   File: [100-evcar.js](https://github.com/lola-source/alx-backend-javascript/blob/master/0x02-ES6_classes/100-evcar.js)
 
 ## Credits
 
@@ -660,11 +524,7 @@ Work is owned and maintained by:
 
 ## Acknowledgments :mega: 
 
-### **`Holberton School`** (*providing guidance*)
-This program was written as part of the curriculum for Holberton School.
-Holberton School is a campus-based full-stack software engineering program
-that prepares students for careers in the tech industry using project-based
-peer learning. For more information, visit [this link](https://www.holbertonschool.com/).
+courtersy of
 <p align="center">
 	<img src="https://assets.website-files.com/6105315644a26f77912a1ada/610540e8b4cd6969794fe673_Holberton_School_logo-04-04.svg" alt="This is a secret;)">
 </p>
